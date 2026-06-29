@@ -1,4 +1,4 @@
-# 🚦 Smart City Traffic Flow Prediction System
+# Smart City Traffic Flow Prediction System
 ### Deep Learning Project — Jakarta Traffic Analytics Division
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://python.org)
@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project builds and evaluates **three deep learning architectures** to predict traffic congestion levels across Jakarta's road network using real-time sensor data, weather conditions, and temporal features.
 
@@ -16,7 +16,7 @@ This project builds and evaluates **three deep learning architectures** to predi
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 traffic-dl-project/
@@ -38,8 +38,8 @@ traffic-dl-project/
 
 ---
 
-## 📊 Dataset Summary
-
+## Dataset Summary
+[Dataset](https://www.kaggle.com/datasets/rauffauzanrambe/smart-city-traffic-flow-prediction-dataset)
 | File | Rows | Key Columns |
 |------|------|-------------|
 | `traffic_sensor_data.csv` | 218,400 | sensor_id, vehicle_count, avg_speed_kmh, occupancy_rate, **congestion_level** |
@@ -52,7 +52,7 @@ traffic-dl-project/
 
 ---
 
-## 🧠 Deep Learning Models
+## Deep Learning Models
 
 ### Model 1 — MLP (Multilayer Perceptron) `Baseline`
 > Feedforward neural network with 4 hidden layers, BatchNorm, and Dropout.
@@ -62,7 +62,7 @@ traffic-dl-project/
 - **Strength:** Fast training and inference; strong baseline
 - **Limitation:** No temporal memory — treats each reading independently
 
-### Model 2 — LSTM (Long Short-Term Memory) `⭐ Recommended`
+### Model 2 — LSTM (Long Short-Term Memory) `Recommended`
 > Recurrent network that models sequential congestion dynamics.
 
 - **Input:** Sequences of 8 time steps (4 hours of 30-min readings)
@@ -80,7 +80,7 @@ traffic-dl-project/
 
 ---
 
-## 📈 Results Summary
+## Results Summary
 
 | Model | Accuracy | F1-Score (Weighted) | ROC-AUC |
 |-------|----------|---------------------|---------|
@@ -92,7 +92,7 @@ traffic-dl-project/
 
 ---
 
-## 🏆 Recommended Model: LSTM
+## Recommended Model: LSTM
 
 The **LSTM model** is recommended for production deployment because:
 
@@ -103,7 +103,7 @@ The **LSTM model** is recommended for production deployment because:
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 - Python 3.10+
@@ -143,7 +143,7 @@ jupyter notebook Traffic_DL_Project.ipynb
 
 ---
 
-## 📦 requirements.txt
+## requirements.txt
 
 ```
 tensorflow>=2.13.0
@@ -157,7 +157,7 @@ jupyter>=1.0.0
 
 ---
 
-## 🔬 Feature Engineering Highlights
+## Feature Engineering Highlights
 
 | Category | Features |
 |----------|---------|
@@ -169,7 +169,7 @@ jupyter>=1.0.0
 
 ---
 
-## 🗺️ Key Findings
+## Key Findings
 
 1. **Speed is the top predictor** — `average_speed_kmh` has a –0.96 correlation with occupancy_rate
 2. **Rush hours dominate** — 07:00–09:00 and 16:00–19:00 account for 38% of all Medium congestion despite being 29% of hours
@@ -179,7 +179,7 @@ jupyter>=1.0.0
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 - [ ] Extend to 4-class prediction (Low / Medium / High / Critical) using occupancy thresholds
 - [ ] Integrate `traffic_events.csv` as a spatial incident feature per sensor
@@ -196,7 +196,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-## 👥 Authors
+## Authors
 
 **Jakarta Smart City — Traffic Analytics Division**  
 Project config version: 2.4.1 | Last updated: March 2024
